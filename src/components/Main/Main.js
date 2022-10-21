@@ -3,9 +3,14 @@ import './Main.css';
 const Main = () => {
 
     return (
-        <main className="main">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi architecto quae quibusdam quasi totam quas doloremque dolore pariatur magni quis perferendis provident iure at adipisci dolorem dignissimos, quam nemo officia?</p>
-        </main>
+        <div className="card" style={{width: '18rem'}}>
+            <img src="./img/rack.jpg" class="card-img-top" alt="..."/>
+            <div className="card-body">
+                <h5 className="card-title">Card title</h5>
+                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="https://google.com" className="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
     )
 }
 
