@@ -1,8 +1,8 @@
-import React from 'react'
+import './Footer.css';
 
 const Footer = () => {
     return (
-        <div>Hola Footer</div>
+        <div className='footer'>Hola Footer</div>
     )
 }
 

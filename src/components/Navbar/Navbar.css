@@ -1,0 +1,22 @@
+.navbar{
+    width: 100%;
+    height: 450px;
+    color: white;
+    background-image: url(../img/rack.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+ul{
+    display: flex;
+    list-style: none;
+    align-items: flex-end;
+}
+
+li{
+    margin: 10px;
+}
