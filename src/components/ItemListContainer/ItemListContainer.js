@@ -1,20 +1,39 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './ItemListContainer.css';
-import fotoMesa from '../img/mesaJulia.jpg';
+import { products } from '../../mock/products';
+import { useState } from 'react';
+import ItemList from './ItemList/ItemList';
 
 const ItemListContainer = ({greeting}) => {
+
+    const [items, setItems] = useState([])
+
+    useEffect(() => {
+        const getProducts = () =>{
+            return new Promise((res, rej) => {
+                setTimeout(() => {
+                    res(products);
+                }, 2000)
+            });
+        };
+    
+        getProducts()     
+        
+            .then((res) => {
+                setItems(res);
+            }) 
+            .catch((error) => {
+                console.log(`rej`, error)
+            }); 
+    }, []);
+
     return (
-        <div>
-            <h3 className="saludo">{greeting}</h3>
-            <div className="card" style={{width: '300px'}}>
-                <img src={fotoMesa} className="card-img-top" alt=""/>
-                <div className="card-body">
-                    <h5 className="card-title">Mesa Julia</h5>
-                    <a href="http://localhost:3000/" className="btn btn-primary">Agregar (+)</a>
-                </div>
-            </div>
+        <div className="container">
+            <h3 className='bienvenida'>{greeting}</h3>
+            <ItemList items={items}/>
         </div>
-    )
+    );
 }
 
-export default ItemListContainer
+export default ItemListContainer;
+
