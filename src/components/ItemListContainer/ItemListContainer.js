@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import './ItemListContainer.css';
 import { products } from '../../mock/products';
 import { useState } from 'react';
-import ItemList from './ItemList/ItemList';
+import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
 
 const ItemListContainer = () => {
