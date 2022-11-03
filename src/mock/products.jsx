@@ -23,6 +23,6 @@ export const products = [{
     price: 43000, 
     descuento: 5,
     stock: 5, 
-    category:`Rack`, 
+    category:`Rack TV`, 
     image:`https://res.cloudinary.com/dvn2dp6im/image/upload/v1667246012/Muind%20Home/rack_zlhbl6.jpg`
 }]

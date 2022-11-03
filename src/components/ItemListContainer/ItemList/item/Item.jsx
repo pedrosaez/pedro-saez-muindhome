@@ -1,5 +1,7 @@
 import React from 'react'
 import './Item.css';
+import { Link } from 'react-router-dom';
+
 
 const Item = ({producto}) => {
     return (
@@ -8,7 +10,7 @@ const Item = ({producto}) => {
                     <img src={producto.image} className="card-img-top" alt={producto.title}/>
                     <div className="card-body">
                         <h5 className="card-title">{producto.title}</h5>
-                        <a href="http://localhost:3000/" className="btn btn-primary">Agregar (+)</a>
+                        <Link className="btn btn-primary" to={`/detail/${producto.id}`} >Ver detalle</Link>
                     </div>
                 </div>
             </div>    

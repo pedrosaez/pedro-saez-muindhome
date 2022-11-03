@@ -13,8 +13,9 @@ const App = () => {
     <BrowserRouter>
       <Header/>
       <Routes>
-        <Route path='/' element={<ItemListContainer greeting = "Bienvenidos a Müind!"/>}/>
-        <Route path='detail' element={<ItemDetailContainer/>}/>
+        <Route path='/' element={<ItemListContainer/>}/>
+        <Route path='/category/:categoryName' element={<ItemListContainer/>}/>
+        <Route path='detail/:idProd' element={<ItemDetailContainer/>}/>
         <Route path='cart' element={<Cart/>}/>
       </Routes>
       <Footer/>
