@@ -5,6 +5,7 @@ import './ItemCount.css';
 const ItemCount = ({stock, onAdd}) => {
     const [initial, setCantidad] = useState(1);
     
+
     const sumar = () => {
         if (initial < stock){
             setCantidad(initial + 1);
@@ -26,7 +27,9 @@ const ItemCount = ({stock, onAdd}) => {
                 <button className='boton1' disabled = {initial === 0 } onClick={restar}>-</button>
                 <p className='numero'>{initial}</p>
                 <button className='boton2' onClick={sumar}>+</button> 
-                <button className='botonGrande' onClick={reset}>Volver a 0</button> 
+                <button className='botonGrande' onClick={reset}><span className="material-symbols-outlined">
+delete
+</span></button> 
                 <button className='agregar' onClick={() => onAdd(initial)}>Agregar (+)</button>
             </div>
         </div>

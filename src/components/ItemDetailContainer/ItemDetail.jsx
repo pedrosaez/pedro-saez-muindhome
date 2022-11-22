@@ -1,11 +1,22 @@
 import React from 'react'
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount'
 
 
 const ItemDetail = ({Item}) => {
 
-    const onAdd = (qty) => console.log(qty);
-    
+    const navigate = useNavigate();
+
+    const onAdd = (qty) => {
+        const [cant, setCant] = useState(0);
+        setCant(qty);
+        setTimeout(() => {
+            navigate('/cart');
+        }, 1000)
+        
+    }
+
     return (
 
     <div>

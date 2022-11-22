@@ -14,7 +14,7 @@ const Navbar = () => {
                 <NavLink className={"links"} to='/category/Rack TV'>Rack TV</NavLink>
                 <NavLink className={"links"} to='/category/Deco'>Deco</NavLink>
             </ul>
-                <Link to='/Cart'><CartWidget/></Link>
+                <Link to='/cart'><CartWidget/></Link>
         </nav>
     )
 }

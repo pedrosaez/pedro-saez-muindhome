@@ -24,5 +24,14 @@ export const products = [{
     descuento: 5,
     stock: 5, 
     category:`Rack TV`, 
-    image:`https://res.cloudinary.com/dvn2dp6im/image/upload/v1667246012/Muind%20Home/rack_zlhbl6.jpg`
+    image:`https://res.cloudinary.com/dvn2dp6im/image/upload/v1667246012/Muind%20Home/rack_zlhbl6.jpg`,
+},
+{
+    id:4, 
+    title: `Sofa Chester` , 
+    price: 85000, 
+    descuento: 5,
+    stock: 2, 
+    category:`Sillones`, 
+    image:`https://res.cloudinary.com/dvn2dp6im/image/upload/v1667246016/Muind%20Home/sillon5_weydbi.jpg`,
 }]
