@@ -1,19 +1,19 @@
 import React from 'react'
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { CartContext } from '../../context/CartContext';
 import ItemCount from '../ItemCount/ItemCount'
 
 
 const ItemDetail = ({Item}) => {
 
-    const navigate = useNavigate();
+    const [show, setShow] = useState(true);
+
+    const { addToCart } = useContext(CartContext);
 
     const onAdd = (qty) => {
-        const [cant, setCant] = useState(0);
-        setCant(qty);
-        setTimeout(() => {
-            navigate('/cart');
-        }, 1000)
+        setShow(false);
+        addToCart( Item , qty);
         
     }
 
@@ -30,7 +30,11 @@ const ItemDetail = ({Item}) => {
                     <h5 className="card-title">{Item.title}</h5>
                     <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                     <h4>${Item.price}</h4>
-                    <ItemCount stock = {Item.stock} onAdd ={onAdd}/>
+                    {show 
+                    ?<ItemCount stock = {Item.stock} onAdd ={onAdd}/>
+                    :<Link to="/cart">Ir al carrito</Link>
+                    }
+                    
                 </div>
                 </div>
             </div>

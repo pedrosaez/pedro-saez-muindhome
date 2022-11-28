@@ -35,3 +35,25 @@ export const products = [{
     category:`Sillones`, 
     image:`https://res.cloudinary.com/dvn2dp6im/image/upload/v1667246016/Muind%20Home/sillon5_weydbi.jpg`,
 }]
+
+
+
+export const getProductsFilter = (categoryName) =>{
+    return new Promise((res, rej) => {
+        const productosFiltrados = products.filter((prod) => prod.category === categoryName)
+        const ref = categoryName ? productosFiltrados : products;
+        setTimeout(() => {
+            res(ref);
+        }, 1500)
+    });
+    
+};
+
+export const getProduct = (idProd) =>{
+    return new Promise((res, rej) => {
+        const product = products.find((prod) => prod.id === +idProd)
+        setTimeout(() => {
+            res(product);
+        }, 1500)
+    });
+};    

@@ -1,34 +1,41 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
-import { products } from '../../mock/products';
+import { getProduct } from '../../mock/products';
 import ItemDetail from './ItemDetail';
+import BounceLoader from "react-spinners/BounceLoader";
 
 const ItemDetailContainer = () => {
 
     const [Item, setItem] = useState ({})
 
+    const [loading, setLoading] = useState(true)
+
     const {idProd} = useParams ();
     
 
     useEffect (() => {
-        const getProduct = () =>{
-            return new Promise((res, rej) => {
-                const product = products.find((prod) => prod.id === +idProd)
-                setTimeout(() => {
-                    res(product);
-                }, 1500)
-            });
-        };
-    
-        getProduct()     
-        
+        setLoading(true);
+        getProduct(idProd) 
             .then((res) => {
                 setItem(res);
             }) 
             .catch((error) => {
                 console.log(`rej`, error)
+            })
+            .finally(() => {
+                setLoading(false);
             }); 
     }, [idProd]);
+    
+        
+        if (loading) {
+            return(
+                <div className="spinners">
+                <BounceLoader/>
+                </div>
+        );
+            
+        }    
 
 
     return (

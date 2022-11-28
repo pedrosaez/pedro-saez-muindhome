@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import Item from './Item';
 import './ItemList.css';
 
@@ -14,4 +14,4 @@ const ItemList = ({items}) => {
     )
 }
 
-export default ItemList
+export default memo(ItemList)

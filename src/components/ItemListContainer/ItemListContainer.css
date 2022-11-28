@@ -13,4 +13,10 @@
     font-family: "Montserrat"
 }
 
+.spinners{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
